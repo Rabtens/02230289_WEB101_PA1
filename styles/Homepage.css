@@ -1,0 +1,201 @@
+/* Setting the overall background color to black, text color to white, and removing default margins and paddings. I prefer using the 'Poppins' font for a clean look. */
+body {
+    background: #000; 
+    color: #fff; 
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+}
+
+/* I want the main title to be centered, quite large, and in a reddish-pink color to catch attention. */
+h1 {
+    text-align: center;
+    font-size: 45px;
+    color: #EA5D60;
+}
+
+/* Paragraphs are centered and the text color is a lighter gray for a bit of contrast against the black background. */
+p {
+    text-align: center;
+    color: #ccc; 
+}
+
+/* Styling the footer to stay at the bottom of the page, using flex to align the back-to-top button to the right. */
+#back-top-container {
+    display: flex;
+    justify-content: end;
+    bottom: 0;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+}
+
+/* The back-to-top button looks like a small, red, clickable circle positioned at the bottom-right of the screen. */
+#back-top {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #EA5D60;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+/* The Pokedex list will be centered and display its items in a grid with flexible sizing. */
+.pokedex {
+    margin: 0 auto;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    padding-inline-start: 0;
+}
+
+/* Each Pokémon card is styled to be a centered, clickable item with rounded corners and a subtle border. I've added a hover transition for visual feedback. */
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 320px;
+    list-style: none;
+    padding: 40px;
+    text-align: center;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    margin: 10px;
+    background-color: #000; 
+    border: 1px solid #555; 
+    color: #fff; 
+    transition: background-color 0.3s; 
+}
+
+/* Adding an animation on hover to make the interaction lively. */
+.card:hover {
+    animation: bounce 0.5s linear;
+}
+
+/* I use specific colors for Pokémon types when their card is hovered over to add a thematic element. */
+.card.steel:hover { background-color: #bbd674; }
+.card.fire:hover { background-color: #FFA756; }
+.card.grass:hover { background-color: #8BBE8A; }
+.card.electric:hover { background-color: #F2CB55; }
+.card.water:hover { background-color: #58abf8; }
+.card.ice:hover { background-color: #53d1da; }
+.card.ground:hover { background-color: #F78551; }
+.card.rock:hover { background-color: #D4C294; }
+.card.fairy:hover { background-color: #EBA8C3; }
+.card.poison:hover { background-color: #BF6E97; }
+.card.bug:hover { background-color: #BBD674; }
+.card.dragon:hover { background-color: #7383B9; }
+.card.psychic:hover { background-color: #FF6568; }
+.card.flying:hover { background-color: #83A2E3; }
+.card.fighting:hover { background-color: #EB4971; }
+.card.normal:hover { background-color: #B5B9C4; }
+.card.ghost:hover { background-color: #8571be; }
+.card.dark:hover { background-color: #6f6e78; }
+
+/* Styling the Pokémon name and subtitle in the card to stand out against the background. */
+.card-title {
+    text-transform: capitalize;
+    margin-bottom: 0px;
+    font-size: 32px;
+    font-weight: normal;
+    position: relative;
+    z-index: 2;
+}
+
+.card-subtitle {
+    margin-top: 5px;
+    color: rgb(255, 255, 255);
+    font-weight: lighter;
+    position: relative;
+    z-index: 2;
+}
+
+/* Making sure the Pokémon images fit well within each card. */
+.card-image {
+    height: 180px;
+    width: 180px;
+    z-index: 2;
+}
+
+/* The search menu needs to be prominent, centered, and user-friendly. */
+.search-menu-content {
+    margin: 10px auto;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Styling the search button to match the theme with a smooth hover effect for interactivity. */
+.search-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: #EA5D60;
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-btn:hover {
+    background-color: #d45456;
+    cursor: pointer;
+}
+
+.search-btn img {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(2%) hue-rotate(137deg) brightness(110%) contrast(101%);
+    width: 18px;
+    height: 18px;
+}
+
+/* Ensuring the search input field is visually integrated with the dark theme. */
+.search {
+    width: 90%;
+    margin: 0 auto;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    height: 35px;
+    border-radius: 10px;
+    padding-left: 10px;
+    outline: none;
+}
+
+/* General styles for action buttons to maintain consistency and enhance usability with a hover effect. */
+.action-button {
+    padding: 8px 16px;
+    margin: 5px;
+    background-color: #EA5D60;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.action-button:hover {
+    background-color: #EA5D60;
+}
+
+/* Styling the home button to stand out as an important navigation tool. */
+.home-button {
+    padding: 8px 16px;
+    background-color: #EA5D60;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.home-button:hover {
+    background-color: #d45456;
+}

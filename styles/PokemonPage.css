@@ -1,0 +1,221 @@
+/* I want the page container to fill the entire viewport height and have a dark background color for a modern look. */
+.pokemonPageContainer {
+    height: 100vh;
+    background-color: #000;
+}
+
+/* The main container for the Pokémon details should be a columnar flex container to keep elements stacked vertically. */
+.pokemon-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: #fff;
+}
+
+/* Header needs a bit of padding and should align its items in the center. */
+.headerContainer {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+/* Styling the back button to be simple and clear, without a distracting background. */
+.back-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    margin-left: 10px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* The title in the Pokémon page is centered and set to be white for readability against the dark background. */
+.pokepage-title {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Inverting colors of the back button icon for better visibility on the dark background. */
+.back-button-icon {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(289deg) brightness(102%) contrast(105%);
+}
+
+/* The image container should center its contents and have vertical margins for spacing. */
+.image-container {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+/* Adding a pseudo-element for stylistic effect behind Pokémon images to make them stand out more. */
+.image-container::before {
+    content: "";
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    margin-left: 10px;
+    background-color: #fff;
+    opacity: .7;
+    top: 11%;
+}
+
+/* The main image of the Pokémon should be absolutely positioned to overlap with the pseudo-element effectively. */
+.card-image-solo {
+    width: 150px;
+    height: 150px;
+    margin-left: 10px;
+    z-index: 1;
+    position: absolute;
+}
+
+/* Info labels such as ID should be bold and aligned to the start of their container. */
+.info-id {
+    font-weight: 700;
+    padding: 0;
+    font-size: 12px;
+    margin: 0;
+    text-align: start;
+    margin-left: 10px;
+}
+
+/* Main titles in the info sections should be large and clearly visible. */
+.info-title {
+    margin: 0;
+    font-size: 35px;
+    margin-left: 10px;
+    color: #fff;
+}
+
+/* Setting up a flex container for navigation menus with gaps and styling the list items. */
+#menus-container ul {
+    display: flex;
+    gap: 15px;
+    height: 25px;
+    padding: 0;
+}
+
+#menus-container li {
+    list-style: none;
+    font-size: 13px;
+}
+
+/* Adding a hover effect to indicate clickable menu items. */
+.menu-title:hover {
+    border-bottom: 2px solid;
+    cursor: pointer;
+}
+
+/* Styling for additional stats container with a dark theme and alignment adjustments. */
+.other-stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #333;
+    position: absolute;
+    z-index: 1;
+}
+
+/* Ensuring all the divs in the stats section have a consistent background and padding. */
+#about-div, .pokedex-data-div, .moves-div, .status-div {
+    width: 95%;
+    margin: 0 auto;
+    background-color: #222;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+/* Styling headers and paragraphs in these sections to maintain readability and hierarchy. */
+#about-div > h1, .pokedex-data-div > h1, .status-div h1, .moves-div p, .status-div p {
+    font-size: 14px;
+}
+
+/* Move boxes should be clickable, well-spaced, and visually distinct. */
+.moves-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 10px;
+    justify-content: start;
+}
+
+.move-box {
+    background-color: #444;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    white-space: nowrap;
+    min-width: 100px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* More detailed styles for displaying Pokémon details within its specific section. */
+.pokemon-details {
+    background: #444;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.pokemon-header {
+    display: flex;
+    align-items: center;
+}
+
+.pokemon-header img {
+    margin-left: 20px;
+    width: 96px;
+    height: 96px;
+}
+
+/* Interactive tabs for Pokémon information should be clear and change visibly when active or hovered. */
+.pokemon-info-tabs button {
+    padding: 10px;
+    margin-right: 5px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+}
+
+.pokemon-info-tabs button:hover {
+    background-color: #EA5D60;
+}
+
+.pokemon-info-tabs button.active {
+    border-bottom: 2px solid #EA5D60;
+}
+
+/* These styles help to toggle visibility of content based on active tab. */
+#pokemon-info-content div {
+    display: none; 
+}
+
+#pokemon-info-content div.active {
+    display: block; 
+}
+
+/* Additional stylings for list elements within moves tab to align with overall design. */
+#moves ul {
+    padding-left: 20px;
+}
+
+#moves li {
+    list-style-type: circle;
+}

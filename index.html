@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The title of my webpage that shows in the browser tab. -->
+    <title>Pokedex</title>
+    <!-- Linking my CSS file for styling the homepage. -->
+    <link rel="stylesheet" href="styles/Homepage.css">
+    <!-- Linking my CSS file for styling the Pokémon page. -->
+    <link rel="stylesheet" href="styles/PokemonPage.css">
+</head>
+<body>
+    <header>
+        <!-- Main heading displayed on the page. -->
+        <h1>Pokedex</h1>
+        <div class="search-menu-content">
+            <!-- Input field where users can type in Pokémon names to search. -->
+            <input type="text" class="search" placeholder="Search Pokémon">
+            <!-- Button with an image that users can click to submit their search. -->
+            <button class="search-btn" onclick="search()"><img src="searchicon.png" alt="search"></button>
+            <!-- I have a hidden file input here for uploading images, which is triggered by another button. -->
+            <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+            <!-- Button to open the file input dialog to upload an image. -->
+            <button class="action-button" onclick="document.getElementById('imageUpload').click()">Upload Image</button>
+            <!-- Button for initiating a search by the image uploaded. -->
+            <button class="action-button" onclick="searchByImage()">Search by Image</button>
+            <!-- I've added buttons to filter Pokémon by their seen, caught, or not seen status. -->
+            <button class="action-button" onclick="displayByStatus('seen')">Seen</button>
+            <button class="action-button" onclick="displayByStatus('caught')">Caught</button>
+            <button class="action-button" onclick="displayByStatus('notSeen')">Not Seen</button>
+        </div>
+        <!-- This button lets users return to the homepage. -->
+        <button class="home-button" onclick="backHome()">Home</button> 
+    </header>
+    <main>
+        <!-- Here's a list where I'll dynamically display Pokémon entries. -->
+        <ul class="pokedex" data-js="pokedex"></ul>
+        <!-- This is a container for showing detailed information about a specific Pokémon. -->
+        <div id="pokemon-details" class="pokemon-details-container"></div>
+    </main>
+    <footer id="back-top-container">
+        <!-- A button that lets users scroll back to the top of the page. -->
+        <button id="back-top" onclick="backTop()"><img src="arrow.png" alt=""></button>
+    </footer>
+    <!-- Linking my JavaScript file that handles all the interactive aspects of the site. -->
+    <script src="script.js"></script>
+</body>
+</html>
